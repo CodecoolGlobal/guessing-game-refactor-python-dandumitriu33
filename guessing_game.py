@@ -1,50 +1,41 @@
-import math
 import random
 
-a = []
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-for i in range(10):
-    g = int(input("Enter an integer from 1 to 99: "))
-    while a[i] != g:
-        if g < a[i]:
-            print("guess is low")
-            g = int(input("Enter an integer from 1 to 99: "))
-        elif g > a[i]:
-            print("guess is high")
-            g = int(input("Enter an integer from 1 to 99: "))
-        else:
-            break
-    print("you guessed it!")
 
-b = []
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-for i in range(10):
-    g = int(input("Enter an integer from 1 to 49: "))
-    while b[i] != g:
-        if g < b[i]:
-            print("guess is low")
-            g = int(input("Enter an integer from 1 to 49: "))
-        elif g > b[i]:
-            print("guess is high")
-            g = int(input("Enter an integer from 1 to 49: "))
-        else:
-            break
-    print("you guessed it!")
+def populate_list(limit):
+    lst = []
+    lst.append(random.randint(1, limit))
+    lst.append(random.randint(1, limit))
+    lst.append(random.randint(1, limit))
+    lst.append(random.randint(1, limit))
+    lst.append(random.randint(1, limit))
+    lst.append(random.randint(1, limit))
+    lst.append(random.randint(1, limit))
+    lst.append(random.randint(1, limit))
+    lst.append(random.randint(1, limit))
+    lst.append(random.randint(1, limit))
+    return lst
+
+
+def guess(list_letter, limit):
+    for i in range(10):
+        g = int(input(f"Enter an integer from 1 to {limit}: "))
+        while list_letter[i] != g:
+            if g < list_letter[i]:
+                print("guess is low")
+                g = int(input(f"Enter an integer from 1 to {limit}: "))
+            elif g > list_letter[i]:
+                print("guess is high")
+                g = int(input(f"Enter an integer from 1 to {limit}: "))
+            else:
+                break
+        print("you guessed it!")
+
+
+def main():
+    a = populate_list(99)
+    b = populate_list(49)
+    guess(a, 99)
+    guess(b, 49)
+
+
+main()
