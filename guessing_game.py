@@ -1,18 +1,10 @@
 import random
 
 
-def populate_list(limit):
+def populate_list(how_many_items, limit):
     lst = []
-    lst.append(random.randint(1, limit))
-    lst.append(random.randint(1, limit))
-    lst.append(random.randint(1, limit))
-    lst.append(random.randint(1, limit))
-    lst.append(random.randint(1, limit))
-    lst.append(random.randint(1, limit))
-    lst.append(random.randint(1, limit))
-    lst.append(random.randint(1, limit))
-    lst.append(random.randint(1, limit))
-    lst.append(random.randint(1, limit))
+    for i in range(how_many_items):
+        lst.append(random.randint(1, limit))
     return lst
 
 
@@ -32,8 +24,8 @@ def guess(working_list, limit):
 
 
 def main():
-    list_a = populate_list(99)
-    list_b = populate_list(49)
+    list_a = populate_list(10, 99)
+    list_b = populate_list(10, 49)
     guess(list_a, 99)
     guess(list_b, 49)
 
