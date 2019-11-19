@@ -10,17 +10,18 @@ def populate_list(how_many_items, limit):
 
 def guess(working_list, limit):
     for i in range(10):
-        number_guess = int(input(f"Enter an integer from 1 to {limit}: "))
+        input_message = f"Enter an integer from 1 to {limit}: "
+        number_guess = int(input(input_message))
         while working_list[i] != number_guess:
             if number_guess < working_list[i]:
-                print("guess is low")
-                number_guess = int(input(f"Enter an integer from 1 to {limit}: "))
+                print("The guess is low.")
+                number_guess = int(input(input_message))
             elif number_guess > working_list[i]:
-                print("guess is high")
-                number_guess = int(input(f"Enter an integer from 1 to {limit}: "))
+                print("The guess is high.")
+                number_guess = int(input(input_message))
             else:
                 break
-        print("you guessed it!")
+        print("You guessed it! \nNew round.")
 
 
 def main():
