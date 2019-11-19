@@ -1,5 +1,6 @@
 import math
 import random
+
 a = []
 a.append(random.randint(1, 99))
 a.append(random.randint(1, 99))
