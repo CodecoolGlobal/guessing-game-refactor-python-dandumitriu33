@@ -2,6 +2,10 @@ import random
 
 
 def populate_list(how_many_items, limit):
+    '''
+    Populates the given list with random numbers up to the limit,
+    the given number of times.
+    '''
     lst = []
     for i in range(how_many_items):
         lst.append(random.randint(1, limit))
@@ -9,6 +13,10 @@ def populate_list(how_many_items, limit):
 
 
 def guess(working_list, limit):
+    '''
+    Guessing function, waits for user input, evaluates the guess
+    and prints clues or the successful guess message.
+    '''
     for i in range(10):
         input_message = f"Enter an integer from 1 to {limit}: "
         number_guess = int(input(input_message))
@@ -25,6 +33,10 @@ def guess(working_list, limit):
 
 
 def main():
+    '''
+    Main function that establishes the program flow.
+    First populates lists and then runs the guessing section for each.
+    '''
     list_a = populate_list(10, 99)
     list_b = populate_list(10, 49)
     guess(list_a, 99)
